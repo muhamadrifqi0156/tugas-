@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Informasi Bahan Ajar - SITTA UT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="stok">
+
+  <header>
+    <nav class="topbar" id="nav" aria-label="Menu utama"></nav>
+  </header>
+
+  <main>
+    <h2>Informasi Stok Bahan Ajar</h2>
+
+    <section class="card" style="overflow-x: auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Cover</th>
+            <th>Kode Lokasi</th>
+            <th>Kode Barang</th>
+            <th>Nama Barang</th>
+            <th>Jenis</th>
+            <th>Edisi</th>
+            <th>Stok</th>
+          </tr>
+        </thead>
+        <tbody id="tbStok"></tbody>
+      </table>
+    </section>
+
+    <form class="card" id="formStok" novalidate>
+      <h3>Tambah Stok Baru</h3>
+      <div class="grid">
+        <div>
+          <label for="fLok">Kode Lokasi</label>
+          <input id="fLok">
+        </div>
+        <div>
+          <label for="fKode">Kode Barang</label>
+          <input id="fKode">
+        </div>
+        <div>
+          <label for="fNama">Nama Barang</label>
+          <input id="fNama">
+        </div>
+        <div>
+          <label for="fJenis">Jenis Barang</label>
+          <select id="fJenis">
+            <option>BMP</option>
+            <option>NonBMP</option>
+          </select>
+        </div>
+        <div>
+          <label for="fEdisi">Edisi</label>
+          <input id="fEdisi" type="number" min="1">
+        </div>
+        <div>
+          <label for="fStok">Stok</label>
+          <input id="fStok" type="number" min="0">
+        </div>
+      </div>
+      <p class="err" id="errStok"></p>
+      <button class="btn">Tambah</button>
+    </form>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

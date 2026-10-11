@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - SITTA UT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+
+  <div class="login-wrap">
+    <aside class="login-side">
+      <h1>SITTA</h1>
+      <p>Sistem Informasi Tiras dan Transaksi Bahan Ajar<br>Universitas Terbuka</p>
+    </aside>
+
+    <main class="login-box">
+      <h2>Selamat Datang</h2>
+
+      <form id="formLogin" novalidate>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="rina@ut.ac.id">
+
+        <label for="password">Password</label>
+        <input type="password" id="password">
+
+        <p class="err" id="errLogin"></p>
+
+        <div class="row">
+          <span></span>
+          <button type="button" class="link" data-open="#mLupa">Lupa password?</button>
+        </div>
+        <button class="btn" type="submit">Login</button>
+      </form>
+
+      <p style="text-align: center;">
+        <button type="button" class="link" data-open="#mDaftar">Belum punya akun? Daftar</button>
+      </p>
+    </main>
+  </div>
+
+  <!-- Modal: Lupa Password -->
+  <div class="modal" id="mLupa">
+    <form class="card" id="formLupa" novalidate>
+      <h3>Lupa Password</h3>
+      <label for="lupaEmail">Email terdaftar</label>
+      <input type="email" id="lupaEmail">
+      <p class="err" id="errLupa"></p>
+      <button class="btn" type="submit">Kirim link reset</button>
+      <button class="btn sec" type="button" data-close="#mLupa">Tutup</button>
+    </form>
+  </div>
+
+  <!-- Modal: Daftar -->
+  <div class="modal" id="mDaftar">
+    <form class="card" id="formDaftar" novalidate>
+      <h3>Daftar Akun</h3>
+      <label for="dNama">Nama lengkap</label>
+      <input id="dNama">
+      <label for="dEmail">Email</label>
+      <input type="email" id="dEmail">
+      <label for="dPass">Password (min. 6 karakter)</label>
+      <input type="password" id="dPass">
+      <p class="err" id="errDaftar"></p>
+      <button class="btn" type="submit">Daftar</button>
+      <button class="btn sec" type="button" data-close="#mDaftar">Tutup</button>
+    </form>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

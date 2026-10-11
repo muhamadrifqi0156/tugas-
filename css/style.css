@@ -1,0 +1,339 @@
+:root {
+  --navy: #1b3a5c;
+  --gold: #f0b429;
+  --bg: #f4f6f8;
+  --ink: #1d2733;
+  --line: #d9e0e7;
+  --ok: #2e9e6a;
+  --err: #d64545;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid #1d6fb8;
+  outline-offset: 2px;
+}
+
+/*Komponen dasar: tombol, form, kartu*/
+.btn {
+  background: var(--gold);
+  color: #222;
+  border: 0;
+  padding: 0.65rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(0.95);
+}
+
+.btn.sec {
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.link {
+  background: none;
+  border: 0;
+  color: #1d6fb8;
+  cursor: pointer;
+  padding: 0.3rem 0;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  margin: 0.8rem 0 0.2rem;
+  color: #556;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.err {
+  color: var(--err);
+  font-size: 0.85rem;
+  min-height: 1.1rem;
+}
+
+/* Halaman login */
+.login-wrap {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.login-side {
+  background: var(--navy);
+  color: #fff;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-side h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+.login-box {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 420px;
+  width: 100%;
+  margin: auto;
+}
+
+.login-box .btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*Navbar & dropdown*/
+.topbar {
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+.topbar .brand {
+  color: var(--gold);
+  font-weight: 700;
+  margin-right: 1.5rem;
+}
+
+.topbar a,
+.dd > span {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem 0.9rem;
+  cursor: pointer;
+}
+
+.topbar a:hover,
+.topbar a.on,
+.dd:hover > span {
+  background: var(--gold);
+  color: #222;
+}
+
+.out {
+  margin-left: auto;
+}
+
+.dd {
+  position: relative;
+}
+
+.dd div {
+  display: none;
+  position: absolute;
+  min-width: 240px;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
+
+.dd:hover div,
+.dd:focus-within div {
+  display: block;
+}
+
+.dd div a {
+  color: var(--ink);
+}
+
+/*Layout halaman dalam */
+main {
+  max-width: 960px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.hero {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero h2 {
+  margin: 0;
+  color: var(--gold);
+}
+
+/*Tabel (stok, laporan)*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th,
+td {
+  padding: 0.6rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+th {
+  background: #e8eef4;
+}
+
+.cover {
+  width: 64px;
+  height: 90px;
+  object-fit: cover;
+  background: #cfd8e0;
+  border-radius: 3px;
+}
+
+/*Tracking: pencarian, progress, timeline*/
+.search {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.badge {
+  padding: 0.15rem 0.6rem;
+  border-radius: 99px;
+  background: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.bar {
+  height: 12px;
+  background: #e1e7ed;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0.6rem 0;
+}
+
+.bar i {
+  display: block;
+  height: 100%;
+  background: var(--ok);
+  transition: width 0.6s;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+}
+
+.grid b {
+  display: block;
+  color: #667;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.tl {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 3px solid var(--gold);
+}
+
+.tl li {
+  position: relative;
+  padding: 0.4rem 0 0.8rem 1rem;
+}
+
+.tl li::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 0.7rem;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.tl small {
+  display: block;
+  color: #667;
+}
+
+/*Modal / pop-up*/
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 10;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal .card {
+  width: 100%;
+  max-width: 400px;
+  margin: 0;
+}
+
+/*Responsif*/
+@media (max-width: 700px) {
+  .login-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .login-side {
+    padding: 1.5rem;
+  }
+}
